@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
-export default class Board extends Component{
+import Card from './Card'
 
+export default class Board extends Component {
   constructor(){
     super()
     this.state = {
-      cards: Array(4).fill(null)
+      cards: Array(9).fill(null)
     }
   }
 
   render() {
+    const cardLayout = this.state.cards.map( (card, index) => {
+        return <Card key={index} id={index}/>
+    })
+
     return (
       <div className="board">
-      "something else"
+        {cardLayout}
       </div>
     )
   }
